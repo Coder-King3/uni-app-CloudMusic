@@ -1,16 +1,102 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "uni-app"
-			}
-		}
-	],
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
-	}
+  "pages": [
+    //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+    {
+      "path": "pages/home/home",
+      "style": {}
+    },
+    {
+      "path": "pages/personal/personal",
+      "style": {
+        "navigationBarTitleText": "个人主页"
+      }
+    },
+    {
+      "path": "pages/search/search",
+      "style": {
+        "navigationBarTitleText": "发现音乐"
+      }
+    },
+    {
+      "path": "pages/video/video",
+      "style": {
+        "navigationBarTitleText": "云村视频",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/login/login",
+      "style": {
+        "navigationBarTitleText": "用户登录",
+        "enablePullDownRefresh": false
+      }
+    }
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "主页",
+        "iconPath": "static/images/tabs/tab-home.png",
+        "selectedIconPath": "static/images/tabs/tab-home-current.png"
+      },
+      {
+        "pagePath": "pages/video/video",
+        "text": "视频",
+        "iconPath": "static/images/tabs/select.png",
+        "selectedIconPath": "static/images/tabs/selected.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "个人",
+        "iconPath": "static/images/tabs/tab-my.png",
+        "selectedIconPath": "static/images/tabs/tab-my-current.png"
+      }
+    ],
+    "selectedColor": "#0094ff"
+  },
+  "preloadRule": {
+    "pages/home/home": {
+      "packages": ["songPackage"]
+    }
+  },
+  "subPackages": [
+    {
+      "root": "songPackage",
+      "pages": [
+        {
+          "path": "pages/recommendSong/recommendSong",
+          "independent": true,
+          "style": {
+            // "navigationBarBackgroundColor": "#91CDF6",
+            "navigationBarTitleText": "每日推荐"
+          }
+        },
+        {
+          "path": "pages/songDetail/songDetail",
+          "independent": true,
+          "style": {}
+        },
+        {
+          "path": "pages/playlistDetails/playlistDetails",
+          "independent": true,
+          "style": {
+            // "navigationBarBackgroundColor": "#91CDF6"
+          }
+        },
+        {
+          "path": "pages/playRecordTab/playRecordTab",
+          "independent": true,
+          "style": {
+            // "navigationBarBackgroundColor": "#91CDF6"
+          }
+        }
+      ]
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "King Cloud-Music",
+    "navigationBarBackgroundColor": "#0094ff"
+  }
 }
